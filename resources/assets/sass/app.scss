@@ -1,0 +1,50 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+// Variables
+@import 'variables';
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    background-color: $blue;
+    .navbar__item {
+        flex: auto;
+        position: relative;
+        &:hover {
+            .navbar__submenu {
+                display: block;
+            }
+        }
+        .navbar__submenu {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+            position: absolute;
+            display: none;
+            .submenu_item {
+                .submenu_link {
+                    color: white;
+                    text-decoration: none;
+                    display: block;
+                    padding: .5em;
+                    background-color: $blue;
+                }
+            }
+        }
+        .navbar__link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+        }
+    }
+}
