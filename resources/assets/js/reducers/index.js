@@ -1,11 +1,16 @@
 // dependencies
-import { combineReducers } from 'redux';
-
+import {
+    combineReducers
+} from 'redux';
+import {
+    reducer as reduxForm
+} from 'redux-form';
 // import reducers...
 import home from './HomePageReducer';
 
 const rootReducer = combineReducers({
-  home,
+    home,
+    form: reduxForm
 });
 
 export default rootReducer;
