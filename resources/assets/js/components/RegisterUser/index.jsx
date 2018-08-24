@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import { push } from 'react-router-redux';
 import NavBar from '../NavBar';
 import { reduxForm, Field } from 'redux-form';
 
 class RegisterUser extends Component {
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onSubmit(values) {
+        this.props.storeUser(values).then(() => {
+            this.props.history.push('/login');
+        });
+    }
+
     render() {
-        const onSubmit = values => {
-            axios
-                .post('http://react-laravel.test/api/auth/signup', values)
-                .then(response => {
-                    if (response.status === 201) {
-                        console.log(response.data);
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        };
         const { handleSubmit, pristine, reset, submitting } = this.props;
+
         return (
             <div>
                 <NavBar />
                 <h1>Register User</h1>
                 <hr />
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(this.onSubmit)}>
                     <div>
                         <label htmlFor="name">Name</label>
                         <Field name="name" component="input" type="text" />

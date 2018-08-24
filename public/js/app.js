@@ -48212,66 +48212,19 @@ function _detectMutations(isImmutable) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_jsx__ = __webpack_require__(400);
 
 // routes
 
 
 var Root = function Root() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__routes__["a" /* default */], null);
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__routes_jsx__["a" /* default */], null);
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Root);
 
 /***/ }),
-/* 193 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_App__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__containers_HomePage__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Contact__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_RegisterUser__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_LoginUser__ = __webpack_require__(388);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_404__ = __webpack_require__(389);
-
-
-//containers
-
-
-
-//components
-
-
-
-
-
-var Routes = function Routes() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2__containers_App__["a" /* default */],
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* BrowserRouter */],
-            null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Switch */],
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__containers_HomePage__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/contact', component: __WEBPACK_IMPORTED_MODULE_4__components_Contact__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__components_RegisterUser__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_6__components_LoginUser__["a" /* default */] }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_7__components_404__["a" /* default */] })
-            )
-        )
-    );
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Routes);
-
-/***/ }),
+/* 193 */,
 /* 194 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54271,10 +54224,8 @@ var Contact = function Contact() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_redux__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_router_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__NavBar__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux_form__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NavBar__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_form__ = __webpack_require__(89);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54287,38 +54238,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-
 var RegisterUser = function (_Component) {
     _inherits(RegisterUser, _Component);
 
-    function RegisterUser() {
+    function RegisterUser(props) {
         _classCallCheck(this, RegisterUser);
 
-        return _possibleConstructorReturn(this, (RegisterUser.__proto__ || Object.getPrototypeOf(RegisterUser)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (RegisterUser.__proto__ || Object.getPrototypeOf(RegisterUser)).call(this, props));
+
+        _this.onSubmit = _this.onSubmit.bind(_this);
+        return _this;
     }
 
     _createClass(RegisterUser, [{
+        key: 'onSubmit',
+        value: function onSubmit(values) {
+            var _this2 = this;
+
+            this.props.storeUser(values).then(function () {
+                _this2.props.history.push('/login');
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
-            var onSubmit = function onSubmit(values) {
-                axios.post('http://react-laravel.test/api/auth/signup', values).then(function (response) {
-                    if (response.status === 201) {
-                        console.log(response.data);
-                    }
-                }).catch(function (error) {
-                    console.log(error);
-                });
-            };
             var _props = this.props,
                 handleSubmit = _props.handleSubmit,
                 pristine = _props.pristine,
                 reset = _props.reset,
                 submitting = _props.submitting;
 
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__NavBar__["a" /* default */], null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__NavBar__["a" /* default */], null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'h1',
                     null,
@@ -54327,7 +54281,7 @@ var RegisterUser = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
-                    { onSubmit: handleSubmit(onSubmit) },
+                    { onSubmit: handleSubmit(this.onSubmit) },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         null,
@@ -54336,7 +54290,7 @@ var RegisterUser = function (_Component) {
                             { htmlFor: 'name' },
                             'Name'
                         ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_redux_form__["a" /* Field */], { name: 'name', component: 'input', type: 'text' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_redux_form__["a" /* Field */], { name: 'name', component: 'input', type: 'text' })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -54346,7 +54300,7 @@ var RegisterUser = function (_Component) {
                             { htmlFor: 'email' },
                             'Email'
                         ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_redux_form__["a" /* Field */], { name: 'email', component: 'input', type: 'email' })
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_redux_form__["a" /* Field */], { name: 'email', component: 'input', type: 'email' })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -54356,7 +54310,7 @@ var RegisterUser = function (_Component) {
                             { htmlFor: 'password' },
                             'Password'
                         ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_redux_form__["a" /* Field */], {
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_redux_form__["a" /* Field */], {
                             name: 'password',
                             component: 'input',
                             type: 'password'
@@ -54370,7 +54324,7 @@ var RegisterUser = function (_Component) {
                             { htmlFor: 'password_confirmation' },
                             'Password Confirmation'
                         ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_redux_form__["a" /* Field */], {
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_redux_form__["a" /* Field */], {
                             name: 'password_confirmation',
                             component: 'input',
                             type: 'password'
@@ -54398,7 +54352,7 @@ var RegisterUser = function (_Component) {
     return RegisterUser;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_redux_form__["c" /* reduxForm */])({ form: 'RegisterUser' })(RegisterUser));
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_2_redux_form__["c" /* reduxForm */])({ form: 'RegisterUser' })(RegisterUser));
 
 /***/ }),
 /* 220 */
@@ -62889,15 +62843,18 @@ var Error404 = function Error404() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_form__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__HomePageReducer__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RegisterUserPage__ = __webpack_require__(397);
 // dependencies
 
 
 // import reducers...
 
 
+
 var rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* combineReducers */])({
     home: __WEBPACK_IMPORTED_MODULE_2__HomePageReducer__["a" /* default */],
-    form: __WEBPACK_IMPORTED_MODULE_1_redux_form__["b" /* reducer */]
+    form: __WEBPACK_IMPORTED_MODULE_1_redux_form__["b" /* reducer */],
+    registerUser: __WEBPACK_IMPORTED_MODULE_3__RegisterUserPage__["a" /* default */]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (rootReducer);
@@ -62956,6 +62913,191 @@ var initialState = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions_RegisterUserPage__ = __webpack_require__(398);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+// actions types
+
+
+
+var initialState = {
+    loadingStore: false,
+    messageStoreError: '',
+    response: ''
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+    var action = arguments[1];
+
+
+    switch (action.type) {
+        case __WEBPACK_IMPORTED_MODULE_0__actions_RegisterUserPage__["STORE_USER_BEGIN"]:
+            return _extends({}, state, {
+                loadingStore: true,
+                messageStoreError: ''
+            });
+
+        case __WEBPACK_IMPORTED_MODULE_0__actions_RegisterUserPage__["STORE_USER_FAILURE"]:
+            return _extends({}, state, {
+                messageStoreError: action.payload.error,
+                loadingStore: false
+            });
+
+        case __WEBPACK_IMPORTED_MODULE_0__actions_RegisterUserPage__["STORE_USER_SUCCESS"]:
+            return _extends({}, state, {
+                loadingStore: false,
+                response: action.payload.response
+
+            });
+
+        default:
+            return state;
+    }
+});
+
+/***/ }),
+/* 398 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_USER_BEGIN", function() { return STORE_USER_BEGIN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_USER_SUCCESS", function() { return STORE_USER_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STORE_USER_FAILURE", function() { return STORE_USER_FAILURE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeUserBegin", function() { return storeUserBegin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeUserFailure", function() { return storeUserFailure; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "storeUserSucces", function() { return storeUserSucces; });
+/* harmony export (immutable) */ __webpack_exports__["storeUser"] = storeUser;
+var STORE_USER_BEGIN = 'STORE_USER_BEGIN';
+var STORE_USER_SUCCESS = 'STORE_USER_SUCCESS';
+var STORE_USER_FAILURE = 'STORE_USER_FAILURE';
+
+var storeUserBegin = function storeUserBegin() {
+    return {
+        type: 'STORE_USER_BEGIN'
+    };
+};
+
+var storeUserFailure = function storeUserFailure(error) {
+    return {
+        type: 'STORE_USER_FAILURE',
+        payload: {
+            error: error
+        }
+    };
+};
+
+var storeUserSucces = function storeUserSucces(response) {
+    return {
+        type: 'STORE_USER_SUCCESS',
+        payload: {
+            response: response
+        }
+    };
+};
+
+function storeUser(values) {
+    return function (dispatch) {
+        dispatch(storeUserBegin());
+        return new Promise(function (resolve, reject) {
+            axios.post('http://react-laravel.test/api/auth/signup', values).then(function (response) {
+                if (response.status === 201) {
+                    console.log(response.data);
+                    dispatch(storeUserSucces(response.data));
+                    resolve();
+                }
+            }).catch(function (error) {
+                console.log(error);
+                dispatch(storeUserFailure(error));
+                reject();
+            });
+        });
+    };
+};
+
+/***/ }),
+/* 399 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_redux__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_RegisterUserPage__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_RegisterUser___ = __webpack_require__(219);
+// depedencias
+
+
+// actions
+
+
+// component
+
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_react_redux__["b" /* connect */])(function (state) {
+    return {
+        message: state.registerUser.loadingStore,
+        users: state.registerUser.messageStoreError,
+        loadingUsers: state.registerUser.response
+    };
+}, __WEBPACK_IMPORTED_MODULE_1__actions_RegisterUserPage__)(__WEBPACK_IMPORTED_MODULE_2__components_RegisterUser___["a" /* default */]));
+
+/***/ }),
+/* 400 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_App__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__containers_HomePage__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__containers_RegisterUserPage__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Contact__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_LoginUser__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_404__ = __webpack_require__(389);
+
+
+//containers
+
+
+
+
+//components
+
+
+
+
+var Routes = function Routes() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_2__containers_App__["a" /* default */],
+        null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["a" /* BrowserRouter */],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Switch */],
+                null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_3__containers_HomePage__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/contact', component: __WEBPACK_IMPORTED_MODULE_5__components_Contact__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_4__containers_RegisterUserPage__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_6__components_LoginUser__["a" /* default */] }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { component: __WEBPACK_IMPORTED_MODULE_7__components_404__["a" /* default */] })
+            )
+        )
+    );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Routes);
 
 /***/ })
 /******/ ]);

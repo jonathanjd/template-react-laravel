@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 //containers
 import App from './containers/App';
 import HomePage from './containers/HomePage';
+import RegisterPage from './containers/RegisterUserPage';
 
 //components
 import Contact from './components/Contact';
-import RegisterPage from './components/RegisterUser';
 import LoginPage from './components/LoginUser';
 import Error404 from './components/404';
 
@@ -15,7 +15,7 @@ const Routes = () => {
         <App>
             <Router>
                 <Switch>
-                <Route exact path="/" component=        {HomePage} />
+                    <Route exact path="/" component={HomePage} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/register" component={RegisterPage} />
                     <Route path="/login" component={LoginPage} />
@@ -24,7 +24,6 @@ const Routes = () => {
             </Router>
         </App>
     );
-
-}
+};
 
 export default Routes;

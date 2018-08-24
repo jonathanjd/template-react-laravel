@@ -7,10 +7,12 @@ import {
 } from 'redux-form';
 // import reducers...
 import home from './HomePageReducer';
+import registerUser from './RegisterUserPage';
 
 const rootReducer = combineReducers({
     home,
-    form: reduxForm
+    form: reduxForm,
+    registerUser,
 });
 
 export default rootReducer;
